@@ -49,7 +49,7 @@ const loadUser = async (token) => {
   }
 
   try {
-    const res = await axios.get('http://localhost:5000/api/auth');
+    const res = await axios.get('https://ecotrack-hwjg.onrender.com/api/auth');
 
     dispatch({
       type: USER_LOADED,
@@ -64,7 +64,7 @@ const loadUser = async (token) => {
 const register = async (formData) => {
   try {
     const res = await axios.post(
-      'http://localhost:5000/api/auth/register',
+      'https://ecotrack-hwjg.onrender.com/api/auth/register',
       formData
     );
 
@@ -82,7 +82,7 @@ const register = async (formData) => {
 const login = async (formData) => {
   try {
     const res = await axios.post(
-      'http://localhost:5000/api/auth/login',
+      'https://ecotrack-hwjg.onrender.com/api/auth/login',
       formData
     );
 

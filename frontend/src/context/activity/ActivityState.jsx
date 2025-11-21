@@ -25,7 +25,7 @@ const ActivityState = (props) => {
   // We'll update this later to get *only* the user's activities
   const getActivities = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/activities');
+      const res = await axios.get('https://ecotrack-hwjg.onrender.com/api/activities');
       dispatch({
         type: GET_ACTIVITIES,
         payload: res.data,
@@ -43,7 +43,7 @@ const ActivityState = (props) => {
     try {
       // We send the activity data to our protected backend route
       const res = await axios.post(
-        'http://localhost:5000/api/activities',
+        'https://ecotrack-hwjg.onrender.com/api/activities',
         activityData
       );
       
@@ -62,7 +62,7 @@ const ActivityState = (props) => {
   // Delete Activity
   const deleteActivity = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/activities/${id}`);
+      await axios.delete(`https://ecotrack-hwjg.onrender.com/api/activities/${id}`);
       
       dispatch({
         type: DELETE_ACTIVITY,
