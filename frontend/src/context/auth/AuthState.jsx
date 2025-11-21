@@ -74,7 +74,11 @@ const register = async (formData) => {
     });
 
   } catch (err) {
-    // ... (your catch block stays the same)
+    console.error('Register error:', err.response);
+    dispatch({
+      type: AUTH_ERROR,
+      payload: err.response?.data?.msg || 'Registration failed'
+    });
   }
 };
 
@@ -94,7 +98,11 @@ const login = async (formData) => {
     // Pass the new token directly
     loadUser(res.data.token);
   } catch (err) {
-    // ... (your catch block stays the same)
+    console.error('Login error:', err.response);
+    dispatch({
+      type: AUTH_ERROR,
+      payload: err.response?.data?.msg || 'Login failed'
+    })
   }
 };
 
